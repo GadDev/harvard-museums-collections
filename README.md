@@ -51,8 +51,8 @@ Ensure you have the following installed:
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone https://github.com/GadDev/test-2-space.git
+   cd test-2-space
    ```
 2. Install the dependencies:
    ```bash
