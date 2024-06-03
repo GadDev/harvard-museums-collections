@@ -3,8 +3,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { Account } from './types/Account'
 import { Transfer } from './types/Transfer'
 import { getExchangeRate } from '@/lib/utils'
-
-export const API_URL = 'http://localhost:5000'
+import { API_URL } from '@/lib/constants/api'
 
 export const getAccounts = async (): Promise<Account[]> => {
   const response = await axios.get(`${API_URL}/accounts`)

@@ -2,8 +2,7 @@ import axios from 'axios'
 import { v4 as uuidv4 } from 'uuid'
 import { User } from './types/User'
 import { getAccountsByOwnerId } from './account'
-
-const API_URL = 'http://localhost:5000'
+import { API_URL } from '@/lib/constants/api'
 
 export const getUsers = async (): Promise<User[]> => {
   const response = await axios.get(`${API_URL}/users`)
