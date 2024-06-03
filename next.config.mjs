@@ -3,7 +3,6 @@
 const BASE_URL = process.env.NODE_ENV === 'production' ? '/test-2-space' : ''
 
 const nextConfig = {
-  basePath: BASE_URL,
   // output: 'export', // <=== enables static exports, required for github pages deployment
   reactStrictMode: true,
 }
