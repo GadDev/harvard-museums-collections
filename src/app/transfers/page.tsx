@@ -22,7 +22,7 @@ export default function TransfersPage() {
           <h1 className="text-lg font-semibold md:text-2xl">
             Transfers management
           </h1>
-          <NavButton href="/create-transfer" variant="outline">
+          <NavButton href="/make-transfer" variant="outline">
             <Plus className="mr-2 h-4 w-4" />
             Make Transfer
           </NavButton>
@@ -38,7 +38,7 @@ export default function TransfersPage() {
           <DataTable<Transfer, Transfer[]>
             columns={columns}
             data={data as Transfer[]}
-            searchInputPlaceholder="Filter users..."
+            searchInputPlaceholder="Filter transfers..."
           />
         )}
       </div>
