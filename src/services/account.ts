@@ -50,7 +50,7 @@ export const updateAccount = async (
   return response.data
 }
 
-export const deleteAccount = async (id: number) => {
+export const deleteAccount = async (id: string) => {
   const response = await axios.delete(`${API_URL}/accounts/${id}`)
   return response.data
 }

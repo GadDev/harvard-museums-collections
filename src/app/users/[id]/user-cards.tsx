@@ -2,11 +2,10 @@
 
 import type { AxiosError } from 'axios'
 import { useQuery, useQueryClient, useMutation } from '@tanstack/react-query'
-import { AlertCircleIcon } from 'lucide-react'
 import type { User } from '@/services/types/User'
 import { getUserById, deleteUser } from '@/services/user'
 import { Error } from '@/components/error'
-
+import { useRouter } from 'next/navigation'
 import {
   AlertDialog,
   AlertDialogAction,
@@ -27,6 +26,7 @@ import { UserAccountsTable } from './user-accounts-table'
 
 const UserCards = ({ id }: { id: string }) => {
   const queryClient = useQueryClient()
+  const router = useRouter()
   const { data, isLoading, isError } = useQuery({
     queryFn: async () => await getUserById(id as string),
     queryKey: ['users', `${id}`],
@@ -41,12 +41,13 @@ const UserCards = ({ id }: { id: string }) => {
     onSuccess: () => {
       toast({
         title: 'User deleted!',
-        description: 'User has been updated successfully.',
+        description: 'User has been deleted successfully.',
       })
       queryClient.refetchQueries({
         queryKey: ['users'],
         type: 'active',
       })
+      router.push('/users')
     },
     onError: (error) => {
       toast({
