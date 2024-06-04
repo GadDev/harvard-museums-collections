@@ -99,7 +99,7 @@ const AccountCards = ({ id }: { id: string }) => {
       <div className="w-full border-t pt-4">
         <div className="flex items-center justify-between">
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            Need to delete this user?
+            Need to delete this account?
           </p>
           <AlertDialog>
             <AlertDialogTrigger asChild>
