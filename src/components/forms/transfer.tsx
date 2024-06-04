@@ -5,7 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import type { SubmitHandler } from 'react-hook-form'
 import { useForm } from 'react-hook-form'
 import { Loader2 } from 'lucide-react'
-
+import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import {
   Form,
@@ -36,6 +36,7 @@ const TransferFundsForm = ({
   fromAccount?: string
   hasBalanceInfo?: boolean
 }) => {
+  const router = useRouter()
   const queryClient = useQueryClient()
   const form = useForm<TransferFormValues>({
     resolver: yupResolver(validationSchema),
@@ -44,7 +45,6 @@ const TransferFundsForm = ({
       toAccountId: '',
       amount: 0,
     },
-    
   })
 
   const { mutate, isPending } = useMutation({
@@ -57,7 +57,7 @@ const TransferFundsForm = ({
         queryKey: ['accounts'],
         type: 'active',
       })
-      form.reset(undefined, { keepDirtyValues: true })
+      form.reset(undefined, { keepDirtyValues: false })
     },
     onError: (error) => {
       toast({

@@ -6,7 +6,7 @@
       "accountNumber": "1234567890",
       "accountType": "Savings",
       "currency": "CHF",
-      "balance": 4950.86,
+      "balance": 4600.86,
       "ownerId": "4d3aafe7-456b-4a7e-9435-8c4ec717c2e2",
       "createdAt": "2024-05-31T10:20:30Z",
       "updatedAt": "2024-06-02T23:48:27.741Z"
@@ -59,7 +59,7 @@
       "id": "3e8f24a5-9c5e-4d8e-8f8f-3c67812b5674",
       "ownerId": "8825d6cb-37de-4986-987d-232f6a8d82d0",
       "currency": "CHF",
-      "balance": 1551.24,
+      "balance": 1901.24,
       "name": "Account 6",
       "accountNumber": "5544332211",
       "accountType": "Credit",
@@ -325,91 +325,147 @@
   "transfers": [
     {
       "id": "6e8d",
-      "fromAccount": "9854324534",
-      "toAccount": "1234567896",
+      "fromAccountId": "9854324534",
+      "toAccountId": "1234567896",
       "amount": 5.02,
       "currency": "EUR",
       "executedAt": "2024-06-03T09:52:20.499Z"
     },
     {
       "id": "7740",
-      "fromAccount": "9876543210",
-      "toAccount": "3322115544",
+      "fromAccountId": "1234567890",
+      "toAccountId": "5544332211",
       "amount": 234,
       "currency": "EUR",
       "executedAt": "2024-06-03T10:23:55.118Z"
     },
     {
       "id": "3976",
-      "fromAccount": "9876543210",
-      "toAccount": "3322115544",
+      "fromAccountId": "1234567890",
+      "toAccountId": "5544332211",
       "amount": 0.56,
       "currency": "EUR",
       "executedAt": "2024-06-03T10:25:14.205Z"
     },
     {
       "id": "ed0b",
-      "fromAccount": "1234567890",
-      "toAccount": "5544332211",
+      "fromAccountId": "1234567890",
+      "toAccountId": "5544332211",
       "amount": 100,
       "currency": "CHF",
       "executedAt": "2024-06-03T10:38:11.680Z"
     },
     {
       "id": "11d3",
-      "fromAccount": "1234567890",
-      "toAccount": "5544332211",
+      "fromAccountId": "1234567890",
+      "toAccountId": "5544332211",
       "amount": 10,
       "currency": "CHF",
       "executedAt": "2024-06-03T10:40:24.270Z"
     },
     {
       "id": "151a",
-      "fromAccount": "1234567890",
-      "toAccount": "5544332211",
+      "fromAccountId": "1234567890",
+      "toAccountId": "5544332211",
       "amount": 4,
       "currency": "CHF",
       "executedAt": "2024-06-03T10:41:48.745Z"
     },
     {
       "id": "34cf",
-      "fromAccount": "1234567890",
-      "toAccount": "5544332211",
+      "fromAccountId": "1234567890",
+      "toAccountId": "5544332211",
       "amount": 10,
       "currency": "CHF",
       "executedAt": "2024-06-03T10:42:18.406Z"
     },
     {
       "id": "8f85",
-      "fromAccount": "1234567890",
-      "toAccount": "5544332211",
+      "fromAccountId": "1234567890",
+      "toAccountId": "5544332211",
       "amount": 10,
       "currency": "CHF",
       "executedAt": "2024-06-03T10:45:59.645Z"
     },
     {
       "id": "6f74",
-      "fromAccount": "1234567890",
-      "toAccount": "5544332211",
+      "fromAccountId": "1234567890",
+      "toAccountId": "5544332211",
       "amount": 10,
       "currency": "CHF",
       "executedAt": "2024-06-03T10:46:14.970Z"
     },
     {
       "id": "92b9",
-      "fromAccount": "1234567890",
-      "toAccount": "5544332211",
+      "fromAccountId": "1234567890",
+      "toAccountId": "5544332211",
       "amount": 10,
       "currency": "CHF",
       "executedAt": "2024-06-03T10:47:09.598Z"
     },
     {
       "id": "7768",
-      "fromAccount": "1234567890",
-      "toAccount": "5544332211",
+      "fromAccountId": "1234567890",
+      "toAccountId": "5544332211",
       "amount": 10,
       "currency": "CHF",
       "executedAt": "2024-06-03T10:47:20.846Z"
+    },
+    {
+      "id": "3301",
+      "fromAccountId": "1234567890",
+      "toAccountId": "5544332211",
+      "amount": 50,
+      "currency": "CHF",
+      "executedAt": "2024-06-04T06:27:45.671Z"
+    },
+    {
+      "id": "e313",
+      "fromAccountId": "1234567890",
+      "toAccountId": "5544332211",
+      "amount": 50,
+      "currency": "CHF",
+      "executedAt": "2024-06-04T06:29:26.974Z"
+    },
+    {
+      "id": "9871",
+      "fromAccountId": "1234567890",
+      "toAccountId": "5544332211",
+      "amount": 50,
+      "currency": "CHF",
+      "executedAt": "2024-06-04T06:29:50.506Z"
+    },
+    {
+      "id": "cb20",
+      "fromAccountId": "1234567890",
+      "toAccountId": "5544332211",
+      "amount": 50,
+      "currency": "CHF",
+      "executedAt": "2024-06-04T06:30:20.040Z"
+    },
+    {
+      "id": "55b0",
+      "fromAccountId": "1234567890",
+      "toAccountId": "5544332211",
+      "amount": 50,
+      "currency": "CHF",
+      "executedAt": "2024-06-04T06:30:46.574Z"
+    },
+    {
+      "id": "b39d",
+      "fromAccountId": "1234567890",
+      "toAccountId": "5544332211",
+      "amount": 50,
+      "currency": "CHF",
+      "executedAt": "2024-06-04T06:31:02.519Z"
+    },
+    {
+      "id": "ebf4",
+      "fromAccountId": "1234567890",
+      "toAccountId": "5544332211",
+      "amount": 50,
+      "currency": "CHF",
+      "executedAt": "2024-06-04T06:31:21.182Z"
     }
   ]
 }

@@ -97,8 +97,8 @@ export const transferFunds = async (transfer: Transfer): Promise<any> => {
     axios.put(`${API_URL}/accounts/${fromAccountId}`, updatedFromAccount),
     axios.put(`${API_URL}/accounts/${toAccountId}`, updatedToAccount),
     axios.post(`${API_URL}/transfers`, {
-      fromAccount: fromAccount.accountNumber,
-      toAccount: toAccount.accountNumber,
+      fromAccountId: fromAccount.accountNumber,
+      toAccountId: toAccount.accountNumber,
       amount,
       description,
       currency: fromAccount.currency,

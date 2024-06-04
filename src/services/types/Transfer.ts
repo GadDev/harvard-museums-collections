@@ -4,7 +4,7 @@ export interface Transfer {
   fromAccountId: string
   toAccountId: string
   amount: number
-  currency?: Currency
+  currency?: Currency | string
   description?: string
   executedAt?: string
 }
