@@ -1,21 +1,24 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { LandmarkIcon, MoveIcon } from 'lucide-react'
+import {
+  LibraryIcon,
+  CuboidIcon,
+  UsersIcon,
+  BookDashedIcon,
+  NotebookPenIcon,
+} from 'lucide-react'
 
-import { Logo, UsersIcon } from '@/components/icons'
 import { ModeToggle } from '@/components/mode-toggle'
-import { NavButton } from '@/components/nav-button'
 import { NavItem } from '@/components/nav-item'
 import ReactQueryProvider from '@/components/react-query-provider'
 import { ThemeProvider } from '@/components/theme-provider'
-import { Toaster } from '@/components/ui/toaster'
 
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'GOM Bank',
+  title: 'Harvard Art Museums',
   description:
-    'A simple banking application built with Next.js, TypeScript, and Tailwind CSS.',
+    'A simple web app to explore the Harvard Art Museums collection.',
 }
 
 export default function RootLayout({
@@ -40,23 +43,27 @@ export default function RootLayout({
                     className="flex items-center gap-2 font-semibold"
                     href="/"
                   >
-                    <Logo />
-                    <span className="">GOM Bank</span>
+                    <LibraryIcon className="h-4 w-4" />
+                    <span className="">Harvard Art Museums</span>
                   </Link>
                 </div>
                 <div className="flex-1 overflow-auto py-2">
                   <nav className="grid items-start px-4 text-sm font-medium">
-                    <NavItem href="/accounts">
-                      <LandmarkIcon className="h-4 w-4" />
-                      Accounts
+                    <NavItem href="/dashboard">
+                      <BookDashedIcon className="h-4 w-4" />
+                      Dashboard
                     </NavItem>
-                    <NavItem href="/users">
+                    <NavItem href="/persons">
                       <UsersIcon className="h-4 w-4" />
-                      Users
+                      Persons
                     </NavItem>
-                    <NavItem href="/transfers">
-                      <MoveIcon className="h-4 w-4" />
-                      Transfers
+                    <NavItem href="/objects">
+                      <CuboidIcon className="h-4 w-4" />
+                      Artifacts
+                    </NavItem>
+                    <NavItem href="/annotations">
+                      <NotebookPenIcon className="h-4 w-4" />
+                      Annotations
                     </NavItem>
                   </nav>
                 </div>
@@ -68,8 +75,8 @@ export default function RootLayout({
                   className="flex items-center gap-2 font-semibold lg:hidden"
                   href="/"
                 >
-                  <Logo />
-                  <span className="">GOM Bank</span>
+                  <LibraryIcon className="h-4 w-4" />
+                  <span className="">Harvard Art Museums</span>
                 </Link>
                 <ModeToggle />
               </header>
@@ -78,7 +85,11 @@ export default function RootLayout({
               </ReactQueryProvider>
             </div>
           </div>
-          <Toaster />
+          <footer className="border-t bg-gray-100/40 p-4 text-xs text-muted-foreground dark:bg-black md:p-6">
+            <div className="mx-auto flex justify-start">
+              <p>&copy; 2024 Harvard Art Museums</p>
+            </div>
+          </footer>
         </ThemeProvider>
       </body>
     </html>

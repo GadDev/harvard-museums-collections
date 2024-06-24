@@ -1,6 +1,6 @@
-# GOM Bank
+# Harvard Museums Collections
 
-A web application for bank accounts management, so accounts can be managed (created, edited, searched and deleted) and fund transfers can be performed between accounts.
+A web application utilizing the Harvard Museum Collection API, enabling users to views objects, people, exhibitions.
 
 ## Table of Contents
 
@@ -27,7 +27,7 @@ This app is using the following stack:
 - **Framework**: [Next.js 14](https://nextjs.org/)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Components**: [Shadcn UI](https://shadcn.dev/)
+- **Components**: [Shadcn UI](https://ui.shadcn.com/)
 - **Formatting**: [Prettier](https://prettier.io/)
 - **Testing**: [Jest](https://jestjs.io/) | [RTL](https://testing-library.com/docs/react-testing-library/intro/)
 - **Mocked server**: [JSON-server](https://github.com/typicode/json-server)
@@ -131,22 +131,3 @@ To automatically fix formatting issues:
 npm run format:fix
 ```
 
-### JSON server
-
-To start the JSON server
-
-```bash
-npm run json-server
-```
-
-This will start a JSON server on port 5000 using the db.json file.
-
-### Start application locally
-
-To start both the JSON server and the application concurrently:
-
-```bash
-npm run start:app
-```
-
-This uses concurrently to run both npm run json-server and npm start in parallel.

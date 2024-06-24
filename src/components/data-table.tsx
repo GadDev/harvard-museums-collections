@@ -1,5 +1,11 @@
 'use client'
 import * as React from 'react'
+import { useDebounce } from 'use-debounce'
+import type {
+  OnChangeFn,
+  PaginationState,
+  TableOptions,
+} from '@tanstack/react-table'
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -29,17 +35,35 @@ import {
   TableHeader,
   TableRow,
 } from './ui/table'
+import { DataTablePagination } from './data-table-pagination'
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
   data: TData[]
   searchInputPlaceholder: string
+  options?: TableOptions<TData>
+  pagination?: PaginationState
+  onPaginationChange?: OnChangeFn<PaginationState>
+  pageCount?: number
+  rowCount?: number
+  manualPagination?: boolean
+  onSearch?: (value: string) => void
 }
 
 export function DataTable<TData, TValue>({
   columns,
   data,
   searchInputPlaceholder,
+  options,
+  pagination = {
+    pageIndex: 0,
+    pageSize: 10,
+  },
+  pageCount,
+  rowCount = 0,
+  onPaginationChange,
+  manualPagination = true,
+  onSearch,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
@@ -48,28 +72,44 @@ export function DataTable<TData, TValue>({
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({})
   const [globalFilterValue, setGlobalFilterValue] = React.useState<string>('')
+  const [debouncedValue] = useDebounce(globalFilterValue, 500)
 
   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
+    // getPaginationRowModel: getPaginationRowModel(),
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
     onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
     onColumnVisibilityChange: setColumnVisibility,
+    onPaginationChange: onPaginationChange,
+    manualPagination,
+    pageCount,
+    rowCount,
     state: {
       sorting,
       columnFilters,
       columnVisibility,
+      pagination,
     },
+    defaultColumn: {
+      size: 200, //starting column size
+      minSize: 50, //enforced during column resizing
+      maxSize: 500, //enforced during column resizing
+    },
+    ...options,
   })
 
   const applyGlobalFilter = (value: string) => {
     setGlobalFilterValue(value)
-    table.setGlobalFilter(value)
+    if (!manualPagination) table.setGlobalFilter(value)
   }
+
+  React.useEffect(() => {
+    onSearch?.(debouncedValue)
+  }, [debouncedValue, onSearch])
 
   return (
     <div>
@@ -114,7 +154,10 @@ export function DataTable<TData, TValue>({
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id}>
+                    <TableHead
+                      key={header.id}
+                      style={{ width: header.getSize() }}
+                    >
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -157,24 +200,7 @@ export function DataTable<TData, TValue>({
           </TableBody>
         </Table>
       </div>
-      <div className="flex items-center justify-end space-x-2 py-4">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.previousPage()}
-          disabled={!table.getCanPreviousPage()}
-        >
-          Previous
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.nextPage()}
-          disabled={!table.getCanNextPage()}
-        >
-          Next
-        </Button>
-      </div>
+      <DataTablePagination table={table} />
     </div>
   )
 }
