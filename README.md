@@ -51,8 +51,8 @@ Ensure you have the following installed:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/GadDev/test-2-space.git
-   cd test-2-space
+   git clone https://github.com/GadDev/harvard-museums-collections.git
+   cd harvard-museums-collections
    ```
 2. Install the dependencies:
    ```bash
