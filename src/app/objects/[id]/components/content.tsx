@@ -10,15 +10,12 @@ import { Error } from '@/components/error'
 
 import type { ArtObjectItem } from '@/services/types/Item'
 
-
-export const Content = ({ initialState, id }: { initialState: any, id: string }) => {
-
+export const Content = ({ id }: { id: string }) => {
   const { data, isLoading, isError } = useQuery({
     queryFn: async () => await getArtObjectById(id),
     queryKey: ['object', id],
     staleTime: Infinity,
     placeholderData: keepPreviousData,
-    initialData: initialState,
   })
 
   const renderItemDetails = (

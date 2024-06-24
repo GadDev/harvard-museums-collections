@@ -3,7 +3,7 @@
 // import { ArrowLeftIcon } from 'lucide-react'
 // import { keepPreviousData, useQuery } from '@tanstack/react-query'
 
-import { getArtObjectById } from '@/services/object'
+import { getArtObjectById, getArtObjects } from '@/services/object'
 // import { Error } from '@/components/error'
 
 // import type { ArtObjectItem } from '@/services/types/Item'
@@ -12,13 +12,19 @@ import { Content } from './components/content'
 // export const dynamicParams = true
 // export const runtime = 'edge'
 
+export async function generateStaticParams() {
+  const objects = await getArtObjects({ page: 1, size: 100 })
+
+  return objects.records.map((object) => ({ id: String(object.id) }))
+}
+
 export default async function ArtObjectItemPage({
   params,
 }: {
   params: { id: string }
 }) {
   const { id } = params
-  const data = await getArtObjectById(id)
+  // const data = await getArtObjectById(id)
 
   // const { data, isLoading, isError } = useQuery({
   //   queryFn: async () => await getArtObjectById(id),
@@ -141,5 +147,5 @@ export default async function ArtObjectItemPage({
   //     </div>
   //   )
   // }
-  return <Content initialState={data} id={id} />
+  return <Content id={id} />
 }
