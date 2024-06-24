@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowLeftIcon } from 'lucide-react'
@@ -8,7 +10,7 @@ import { Error } from '@/components/error'
 
 import type { ArtObjectItem } from '@/services/types/Item'
 
-export const dynamic = 'auto'
+export const dynamic = 'force-static'
 export const dynamicParams = true
 
 export default function ArtObjectItemPage({
