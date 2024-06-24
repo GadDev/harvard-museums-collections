@@ -2,7 +2,7 @@ import { getArtObjects } from '@/services/object'
 import { Content } from './components/content'
 
 export async function generateStaticParams() {
-  const objects = await getArtObjects({ page: 1, size: 100 })
+  const objects = await getArtObjects({ page: 1, size: 24464 })
 
   return objects.records.map((object) => ({ id: String(object.id) }))
 }
