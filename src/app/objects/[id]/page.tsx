@@ -10,7 +10,8 @@ import { Error } from '@/components/error'
 
 import type { ArtObjectItem } from '@/services/types/Item'
 
-export const dynamic = 'force-dynamic'
+export const dynamic = 'auto'
+export const dynamicParams = true
 
 export default function ArtObjectItemPage({
   params,
