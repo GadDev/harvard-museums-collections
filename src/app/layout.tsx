@@ -12,6 +12,7 @@ import { ModeToggle } from '@/components/mode-toggle'
 import { NavItem } from '@/components/nav-item'
 import ReactQueryProvider from '@/components/react-query-provider'
 import { ThemeProvider } from '@/components/theme-provider'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 import './globals.css'
 
@@ -91,6 +92,7 @@ export default function RootLayout({
             </div>
           </footer>
         </ThemeProvider>
+        <SpeedInsights />
       </body>
     </html>
   )

@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 
+const BASE_URL = process.env.NODE_ENV === 'production' ? '/harvard-museums-collections' : ''
+
 const nextConfig = {
+  baseUrl: BASE_URL,
   // output: 'export', // <=== enables static exports, required for github pages deployment
   reactStrictMode: true,
   images: {
