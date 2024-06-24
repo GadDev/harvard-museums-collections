@@ -4,7 +4,6 @@ const BASE_URL =
   process.env.NODE_ENV === 'production' ? '/harvard-museums-collections' : ''
 
 const nextConfig = {
-  baseUrl: '',
   // output: 'export', // <=== enables static exports, required for github pages deployment
   reactStrictMode: true,
   images: {
