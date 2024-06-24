@@ -8,31 +8,6 @@ const accounts: Record<string, any> = {
   '2': { id: '2', accountNumber: 'ACC2', balance: 200, currency: 'USD' },
 }
 
-const handlers: RequestHandler[] = [
-  // http.get(`${API_URL}/accounts/:accountId`, ({ params }) => {
-  //   const { accountId } = params
-  //   const account = accounts[accountId as string]
-  //   if (account) {
-  //     return HttpResponse.json(account)
-  //   } else {
-  //     return new HttpResponse(null, {
-  //       status: 404,
-  //       statusText: 'Account not found',
-  //     })
-  //   }
-  // }),
-  // http.put(`${API_URL}/accounts/:accountId`, ({ params }) => {
-  //   const { accountId } = params
-  //   const account = accounts[accountId as string]
-  //   if (account) {
-  //     return HttpResponse.json(account)
-  //   } else {
-  //     return new HttpResponse(null, {
-  //       status: 404,
-  //       statusText: 'Account not found',
-  //     })
-  //   }
-  // }),
-]
+const handlers: RequestHandler[] = []
 
 export { handlers }
