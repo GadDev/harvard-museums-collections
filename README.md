@@ -15,8 +15,6 @@ A web application utilizing the Harvard Museum Collection API, enabling users to
   - [Lint](#lint)
   - [Test](#test)
   - [Formatting](#formatting)
-  - [JSON Server](#json-server)
-  - [Start Application](#start-application)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -30,7 +28,6 @@ This app is using the following stack:
 - **Components**: [Shadcn UI](https://ui.shadcn.com/)
 - **Formatting**: [Prettier](https://prettier.io/)
 - **Testing**: [Jest](https://jestjs.io/) | [RTL](https://testing-library.com/docs/react-testing-library/intro/)
-- **Mocked server**: [JSON-server](https://github.com/typicode/json-server)
 - **HTTP-client**: [Axios](https://axios-http.com/)
 - **Data fetching**: [React Query](https://tanstack.com/query/latest)
 
