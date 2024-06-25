@@ -16,7 +16,7 @@
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "prettier --write --ignore-path .gitignore .",
     "prepare": "husky",
-    "make-badges": "istanbul-badges-readme"
+    "make-badges": "istanbul-badges-readme --style=\"for-the-badges\" --logo=\"jest\""
   },
   "dependencies": {
     "@hookform/resolvers": "^3.4.2",
