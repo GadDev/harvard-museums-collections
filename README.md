@@ -41,7 +41,7 @@ To get started with this project, follow the instructions below.
 
 Ensure you have the following installed:
 
-- [Node.js](https://nodejs.org/) (version 20.9.0)
+- [Node.js](https://nodejs.org/) (version 20.15.0)
 - [npm](https://www.npmjs.com/) (version 10.1.0)
 
 ### Installation
@@ -127,4 +127,3 @@ To automatically fix formatting issues:
 ```bash
 npm run format:fix
 ```
-

@@ -3,7 +3,7 @@ import type { Info } from './types/Info'
 import type { Person } from './types/Person'
 import { BASE_HARVARD_API_URL } from '@/lib/constants/api'
 
-interface ArtObjectResponse {
+export interface PersonsResponse {
   info: Info
   records: Person[]
 }
@@ -18,7 +18,7 @@ export const getPersons = async ({
   page?: number
   size?: number
   query?: string
-}): Promise<ArtObjectResponse> => {
+}): Promise<PersonsResponse> => {
   const response = await axios.get(
     `${BASE_URL}?apikey=${process.env.NEXT_PUBLIC_API_KEY}&size=${size}&page=${page}${query ? `&q=${query}` : ''}`,
   )

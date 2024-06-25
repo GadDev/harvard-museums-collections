@@ -9,7 +9,7 @@ import { useState } from 'react'
 import { useArtObjects } from '@/hooks/useArtObjects'
 
 export default function ObjectsPage() {
-  const [pagination, setPagination] = useState<PaginationState>({
+  const [pagination, setPagination] = useState({
     pageIndex: 0,
     pageSize: 10,
   })
