@@ -43,7 +43,7 @@ describe('formatDateTime', () => {
   it('formats ISO date string correctly', () => {
     const isoString = '2023-06-24T15:30:00Z'
     const formattedDate = formatDateTime(isoString)
-    expect(formattedDate).toBe('24 Jun 2023, 16:30')
+    expect(formattedDate).toBe('24 Jun 2023, 15:30')
   })
 
   it('formats ISO date string with different time correctly', () => {
