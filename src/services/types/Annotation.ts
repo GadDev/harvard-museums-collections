@@ -33,4 +33,3 @@ export interface Annotation {
   feature: string
   idsid: number
 }
-
